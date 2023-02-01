@@ -37,10 +37,12 @@ I have explained the mechanisms used for library dependencies within each file. 
 
 ## Project Group
 
-* Rachel R
-* Peter P
+* Xin Guan
+* Emelia Osborne
+* Erin Pollard
+* Zhihui Zhang
 
-This project has a 50/50 equity split betwen the two project partners.
+This project has a 25/25/25/25 equity split betwen the four project partners.
 
 ## Reading order and requirements
 

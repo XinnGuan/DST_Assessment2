@@ -1,8 +1,4 @@
-# Example Assessment for Data Science Toolbox
-
-This is an example project, laid out in the format that is required for [Data Science Toolbox](dsbristol.github.io/dst/) at the University of Bristol. This addresses the [Example Assessment](https://raw.githubusercontent.com/dsbristol/dst/d052f6ee95172760cb533811804c441e6e919854/assets/assessments/Example_Assessment.pdf).
-
-It is annotated with occasional thoughts, if some context is required.
+# Sentiment Analysis NLP Assessment for Data Science Toolbox
 
 ### Comment on Markdown reflections:
 
@@ -52,21 +48,16 @@ All report content is in the directory:
 
 The report takes the following structure:
 
-* 01-Data.Rmd
-* 02-R_analysis.Rmd
-* 03-Python_Analysis.ipynb
-* 04-Wrapup.Rmd
-
-With html output of the Rmd content included for convenience.
+* 01-Introduction.ipynb
+* Data
+* 02-DataCleaning.ipynb
+* 03-LDAModel.ipynb
+* 04-Word2vecModel.ipynb
+* 05-Classification.ipynb
+* 06-Comparison.ipynb
+* 07-Discussion.ipynb
 
 ### Requirements:
-
-Requirements for the Rmd files are given within each script, or can be installed in advance using:
-```{sh}
-Rscript requirementsR.R
-```
-in which the list of packages used is given.
-
 Requirements for the Python code is given in `requirements.txt`; to install, in a virtual environment run:
 
 ```{sh}
@@ -77,17 +68,7 @@ pip3 install -r requirements.txt
 
 Our working is shown in our own directories,
 
-* RachelR/test.Rmd
-* PeterP/work.ipynb
+Zhihui performed the data cleaning, Erin & Emelia worked on the LDA model, Xin produced the Word2Vec model and we collectively created the classifciation model and wrote the comparison/discussion together after examination of the results.
 
-Rachel R wrote the R analysis, Peter P wrote the Python analysis, and we wrote the Data processing and wrapup together after examination of the whole analysis.
-
-## Reflections
-
-We have placed our reflections in the folder:
-
-* reflection/
-  - RachelR_Reflection.pdf
-  - PeterP_Reflection.pdf
 
 Thanks!

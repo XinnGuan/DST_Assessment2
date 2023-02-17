@@ -12,7 +12,7 @@
 This project has a 25/25/25/25 equity split betwen the four project partners.
 
 ## Description
-A project focused on topic modelling of text data, evaluated using sueprvised classification.
+A project focused on topic modelling of text data, evaluated using supervised classification.
 
 ## Reading order and requirements
 

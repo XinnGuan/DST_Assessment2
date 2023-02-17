@@ -11,6 +11,9 @@
 
 This project has a 25/25/25/25 equity split betwen the four project partners.
 
+## Description
+A project focused on topic modelling of text data, evaluated using sueprvised classification.
+
 ## Reading order and requirements
 
 All report content is in the directory:
@@ -27,13 +30,6 @@ The report takes the following structure:
 * 05-Classification.ipynb
 * 06-Comparison.ipynb
 * 07-Discussion.ipynb
-
-### Requirements:
-Requirements for the Python code is given in `requirements.txt`; to install, in a virtual environment run:
-
-```{sh}
-pip3 install -r requirements.txt
-```
 
 ## Evidence
 

@@ -1,34 +1,5 @@
 # Sentiment Analysis NLP Assessment for Data Science Toolbox
 
-### Comment on Markdown reflections:
-
-The PDF versions of the reflections are created using:
-
-```{sh}
-pandoc -o RachelR_Reflection.pdf RachelR_Reflection.md 
-pandoc -o PeterP_Reflection.pdf PeterP_Reflection.md 
-```
-
-Markdown is an acceptable format, though PDF looks nicer.
-
-### Comment on Report formats:
-
-It is completely fine to present a well commented Rmd or ipynb file. You are welcome to try to generate a beautiful PDF in which all of the results are knitted together, but it can be awkward if content is fundamentally separated. Yes, you can create a PDF from each file and merge the PDF, and doing so once is educational, but it isn't the point of DST.
-
-**Please commit your final output**. It is generally considered bad practice to commit transient content to your repository. This would include the Jupyter Notebook with all of the content competed, and the html output of Rmd. However, for the purposes of generating a one-off assessed report, it is safest to do this, though best only for your final commit. 
-
-This is because it is possible that I cannot run your code, for a good reason or a bad, and therefore I want to see what the output should be.
-
-Why is transient content bad? You repository will get bigger and take longer to process as the whole history of everything that you've generated is stored. Text files compress very nicely for this content, but binary objects such as images and data, hidden inside html or ipynb files, compress badly.
-
-### Comment on data:
-
-Don't commit very large datasets to GitHub, and don't commit modestly large ones unless necessary (and try not to duplicate them). There are file size limits, but it is inefficient. Try to use a different data sharing solution, such as OneDrive, for such data.
-
-### Comment on requirements:
-
-I have explained the mechanisms used for library dependencies within each file. You should *not* need to actually install the dependencies listed below as they are all quite standard; however the proceure is standard and helpful.
-
 # README.md
 
 ## Project Group

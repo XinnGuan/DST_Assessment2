@@ -31,6 +31,15 @@ The report takes the following structure:
 * 06-Comparison.ipynb
 * 07-Discussion.ipynb
 
+* Required packages/
+
+The packages that need to be installed:
+
+* gensim
+* sklearn
+* xgboost
+* wordcloud
+
 ## Evidence
 
 Our working is shown in our own directories,

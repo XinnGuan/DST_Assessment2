@@ -103,13 +103,41 @@ xgb_model = xgb.XGBClassifier(
 
 start_time = time.time()
 xgb_model.fit(trainDataVecs1, y_train1)
-print("Time taken to fit the demodel with word2vec vectors: " + str(time.time() - start_time))
 
 
+X_test=pd.read_csv("test_cleaned_text_and_summaries")
+X_test['text']=X_test['text'].map(myprocess)
+
+testDataVecs = getAvgFeatureVecs(X_test['text'], w2v_model, 100)
+
+y_test=pd.read_csv("C:/Users/haile/OneDrive - University of Bristol/assessment2/test_sentiments_50k.csv")
+
+testDataVecs1,y_test1=remove_unuseful_rows(testDataVecs,y_test['sentiment'])
+xgb_prediction=xgb_model.predict(testDataVecs1)
+print(classification_report(y_test1,xgb_prediction))
 
 
+y_pred = [x[1] for x in xgb_model.predict_proba(testDataVecs1)]
+fpr, tpr, thresholds = roc_curve(y_test1, y_pred, pos_label = 1)
 
+roc_auc = auc(fpr, tpr)
 
+plt.figure(1, figsize = (5, 3))
+lw = 2
+plt.plot(fpr, tpr, color='darkorange',
+         lw=lw, label='ROC curve (area = %0.2f)' % roc_auc)
+plt.plot([0, 1], [0, 1], lw=lw, linestyle='--')
+plt.xlim([0.0, 1.0])
+plt.ylim([0.0, 1.0])
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('Receiver operating characteristic example')
+plt.legend(loc="lower right")
+plt.show()
+
+df=xgb_model.predict_proba(testDataVecs1)
+df=pd.DataFrame(df)
+df.to_csv('summary_proba_results.csv')
 
 
 

@@ -11,7 +11,7 @@ from sklearn.model_selection import train_test_split, RandomizedSearchCV, GridSe
 from sklearn.decomposition import PCA
 import xgboost as xgb
 
-train=pd.read_csv('data_cleaned_full_text_and_summaries')
+train=pd.read_csv('data_cleaned_full_text_and_summaries.csv')
 
 def myprocess(thisdoc):
     return(thisdoc.strip('[]').replace("u'", '').replace("'", '').replace(' ', '').split(','))
@@ -105,7 +105,7 @@ start_time = time.time()
 xgb_model.fit(trainDataVecs1, y_train1)
 
 
-X_test=pd.read_csv("test_cleaned_text_and_summaries")
+X_test=pd.read_csv("test_cleaned_text_and_summaries.csv")
 X_test['text']=X_test['text'].map(myprocess)
 
 testDataVecs = getAvgFeatureVecs(X_test['text'], w2v_model, 100)
@@ -114,8 +114,10 @@ y_test=pd.read_csv("test_sentiments_50k.csv")
 
 testDataVecs1,y_test1=remove_unuseful_rows(testDataVecs,y_test['sentiment'])
 xgb_prediction=xgb_model.predict(testDataVecs1)
-print(classification_report(y_test1,xgb_prediction))
-
+result=classification_report(y_test1,xgb_prediction)
+f=open(r'report.csv','w')   
+print(result,file=f)
+f.close()
 
 y_pred = [x[1] for x in xgb_model.predict_proba(testDataVecs1)]
 fpr, tpr, thresholds = roc_curve(y_test1, y_pred, pos_label = 1)
@@ -134,6 +136,8 @@ plt.ylabel('True Positive Rate')
 plt.title('Receiver operating characteristic example')
 plt.legend(loc="lower right")
 plt.show()
+plt.savefig('roc.png')
+
 
 df=xgb_model.predict_proba(testDataVecs1)
 df=pd.DataFrame(df)

@@ -91,42 +91,20 @@ def remove_unuseful_rows(trainDataVecs,y_train):
 
 trainDataVecs1,y_train1=remove_unuseful_rows(trainDataVecs,y_train)
 
-
-<<<<<<< Updated upstream
-tuned_model = xgb.XGBClassifier(
-=======
-scale_pos_weight = (sum(y_train1['sentiment']==0))/(sum(y_train1['sentiment']==1))
+scale_pos_weight = (sum(y_train1==0))/(sum(y_train1==1))
 print(scale_pos_weight)
-xgb_weighted = xgb.XGBClassifier(
->>>>>>> Stashed changes
-    max_depth = 9, 
-    min_child_weight = 1, 
-    gamma = 0.4, 
-    subsample = 0.9, 
-    colsample_bytree = 0.9,
-    learning_rate = 0.2,
-    n_estimators = 300,
-<<<<<<< Updated upstream
-    eval_mtric = logloss)
-=======
-    scale_pos_weight = scale_pos_weight,
-    eval_metric='logloss')
 
-
-start_time = time.time()
-xgb_weighted.fit(trainDataVecs1, y_train1["sentiment"])
-print("Time taken to train the model: " + str(time.time() - start_time))
-filename='xgb_model_weighted.joblib'
-joblib.dump(xgb_weighted,filename)
-xgb_weighted=joblib.load('xgb_model_weighted.joblib')
-xgb_weighted_prediction=xgb_weighted.predict(testDataVecs1)
-
+xgb_model = xgb.XGBClassifier(
+    objective='binary:logistic',
+    eval_metric='logloss',
+    scale_pos_weight=scale_pos_weight,
+    learning_rate=0.05,
+    n_estimators=150)
 
 start_time = time.time()
 xgb_model.fit(trainDataVecs1, y_train1)
 print("Time taken to fit the demodel with word2vec vectors: " + str(time.time() - start_time))
 
->>>>>>> Stashed changes
 
 
 

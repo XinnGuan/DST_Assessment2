@@ -110,7 +110,7 @@ X_test['text']=X_test['text'].map(myprocess)
 
 testDataVecs = getAvgFeatureVecs(X_test['text'], w2v_model, 100)
 
-y_test=pd.read_csv("C:/Users/haile/OneDrive - University of Bristol/assessment2/test_sentiments_50k.csv")
+y_test=pd.read_csv("test_sentiments_50k.csv")
 
 testDataVecs1,y_test1=remove_unuseful_rows(testDataVecs,y_test['sentiment'])
 xgb_prediction=xgb_model.predict(testDataVecs1)

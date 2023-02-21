@@ -99,14 +99,16 @@ def remove_unuseful_rows(trainDataVecs,y_train):
 
 trainDataVecs1,y_train1=remove_unuseful_rows(trainDataVecs,y_train)
 
-param_grid = {
-        'min_child_weight': [1, 5,10],
-        'max_depth': [7,9],
-        }
 
-estimator = xgb.XGBClassifier(n_estimators=300, objective='binary:logistic',learning_rate =0.2, gamma=0.4,
-    subsample=0.9, 
-    colsample_bytree = 0.9,)
+tuned_model = xgb.XGBClassifier(
+    max_depth = 9, 
+    min_child_weight = 1, 
+    gamma = 0.4, 
+    subsample = 0.9, 
+    colsample_bytree = 0.9,
+    learning_rate = 0.2,
+    n_estimators = 300,
+    eval_mtric = logloss)
 
 
 

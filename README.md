@@ -23,13 +23,18 @@ All report content is in the directory:
 The report takes the following structure:
 
 * 01-Introduction.ipynb
-* Data
-* 02-DataCleaning.ipynb
-* 03-LDAModel.ipynb
-* 04-Word2vecModel.ipynb
-* 05-Classification.ipynb
-* 06-Comparison.ipynb
-* 07-Discussion.ipynb
+* 02-Test-Training-Preparation.ipynb
+* 03-Data-Preprocessing.ipynb
+* 04-Intro-to-LDA.ipynb
+* Perplexity-Plot-for-tuning.png
+* 05-Investigating-Ngrams-LDA.ipynb
+* 06-LDA-toy-example.ipynb
+* 07-Word2vec_summary.ipynb
+* 08-Word2vec_summary_and_review.ipynb
+* Model results (csvs)
+* 09-Model-Comparison.ipynb
+* 10-Discussion.ipynb
+
 
 The packages that need to be installed:
 

@@ -42,7 +42,7 @@ The packages that need to be installed:
 
 Our working is shown in our own directories,
 
-Zhihui performed the data cleaning, Erin & Emelia worked on the LDA model, Xin produced the Word2Vec model and we collectively created the classifciation model and wrote the comparison/discussion together after examination of the results.
+Zhihui performed the data cleaning, Erin & Emelia worked on the LDA model, Xin and Zhihui produced the Word2Vec model and we collectively created the classifciation model and wrote the comparison/discussion together after examination of the results.
 
 
 Thanks!

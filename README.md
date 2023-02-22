@@ -34,6 +34,8 @@ The report takes the following structure:
 * Model results (csvs)
 * 09-Model-Comparison.ipynb
 * 10-Discussion.ipynb
+
+
 The packages that need to be installed:
 
 * gensim
